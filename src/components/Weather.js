@@ -19,7 +19,7 @@ const Weather = props =>(
             
             <p className="weather__key"> Humidity: 
             {
-                props.temp ? <span className="weather__value">{props.humidity}%</span> : "Error"
+                props.temp ? <span className="weather__value">{props.humidity}%</span> : null
                     
             }</p>
 
@@ -28,17 +28,15 @@ const Weather = props =>(
                 props.temp ? 
                  <span className="weather__value">{props.description}</span>: null
             }</p>
-
-
-            <p className="weather__key"> Park: 
-            {
-                props.temp ? 
-                 <span className="weather__value">{props.park}</span>: null
-            }</p>
             {
                 props.error ? 
                 <p className="weather__key"> Error: <span className="weather__value">{props.error}</span>
-                </p> : null}
+                </p> : null
+            } {
+                props.temp ? 
+                 <span className="weather__value"><a href="footer">V</a></span>: null
+            }
+                
         </div>
     );
 

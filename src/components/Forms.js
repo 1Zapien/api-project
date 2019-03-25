@@ -5,8 +5,9 @@ class Forms extends Component{
     render(){
         return (
             <form onSubmit={this.props.getData}>
-                <input type="text" name="city" placeholder="city.."/>
-                <input type="text" name="country" placeholder="country.."/>
+                <h1 className="header">Get the perfect run!</h1>
+                <input type="text" name="city" placeholder="City.."/>
+                <input type="text" name="country" placeholder="Country.."/>
                 <button>Location Data </button>
             </form>
         );

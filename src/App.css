@@ -7,142 +7,119 @@ html,body {
   width: 100vw;
   height: 100vh;
   color: #DFDFE3;
-  background: #3E3E63;
-  overflow: hidden;
-
+  background: #fff !important;
 }
 
 
 /*-----New Style--------*/
 
+
+
 .title-left{
   width:100%;
+  text-align: center;
   float: left;
   background: url("img/main.jpg") center center no-repeat;
   background-size: cover;
-  background-color: #252444;
-
+  background-color: #fff;
+  height: 50vh;
 }
-
-
-
-.title-container__title {
-  font-size: 2em;
-  color: #DFDFE3;
-  margin-left: 15px;
-  margin-right: 15px;
-  
-}
-
-.title-top{
-  width: 100%; 
-  font-family: 'Roboto Slab', serif;
-  padding-left: 2%;
-  font-size: 2em;
-
-}
-
 
 .title-container__subtitle {
   width: 100%;
-  color: #DFDFE3;
+  color: rgb(255, 255, 255);
   margin-left: 2%;
   margin-right: 2%;
   font-size: 1em;
 }
 
-
 .form-right{
   color:#DFDFE3;
-  background-color: #111;
-  height: 98vh;
-  padding-left: 3%;
+  background-color:#999cd0;
+  height: 100%;
+  padding-left: 4%;
+  padding-top: 3%;
+  overflow: hidden;
+}
+
+.header{
+  padding-top: 3%;
+  font-size: 2em;
 }
 
 
 
 .weather__key {
-  color:#2A8FF2;
+  color:#eee;
 }
 
 
 .weather__value {
   color: #DFDFE3;
+  width: 100%;
  
 }
 
-
-
+span.weather__value{
+  width: 100%;
+}
 
 
 .footer{
-    position: absolute;
-    left: 0;
-    bottom: 0;
     height: 30px;
     width: 100%;
-    background-color: #111;
-    color: white;
+    background-color: #fff;
+    color: #111;
     text-align: left;
-    padding-left: 3%;
-    padding-top:5px;
+    overflow: hidden;
 }
 
 
 
-
-
-/*               */
-
-.wrapper {
-  background: #2c3e50;
-  
+li {
+  float: left;
+  list-style-type: none;
+  padding-left: 5px; 
+  background-color: #fff;
 }
 
-
-
-
-.main {
-  
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding-left: 20px;
+  text-decoration: none;
 }
+
+li a:hover {
+  background-color: #fff;
+}
+
 
 .title-container {
   background: #f50000;
  
 }
 
-.title-outer{
-  
-}
-
-
-
-.title-bottom{
-  
-}
-
-
-
-
-
-
 
 .form-container {
  height: 100%;
+ margin-top: 5%;
 }
 
 input[type="text"] {
   background-color: transparent;
   border: 0;
-  border-bottom: solid 1px #2A8FF2;
-  width: 30%;
+  border-bottom: solid 1px #eee;
+  width: 66%;
   padding-bottom: 4px;
   color: #fff !important;
-  font-weight: lighter;
+  font-weight: 1.2em;
   letter-spacing: 2px;
   margin-bottom: 30px;
   margin-right: 20px;
   font-size: 20px;
+  padding-top: 10%
 }
 
 input[type="text"] { 
@@ -150,7 +127,7 @@ input[type="text"] {
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #2c3e50 inset;
+    -webkit-box-shadow: 0 0 0 30px rgb(109, 108, 108) inset;
     -webkit-text-fill-color: #fff !important;
 }
 
@@ -163,9 +140,10 @@ button {
   border-radius: 2px;
   font-weight: lighter;
   letter-spacing: 1px;
-  font-size: 15px;
+  font-size: 20px;
+  width: 66%;
   cursor: pointer;
-  background-color: #2A8FF2;
+  background-color: rgb(109, 108, 108);
   color: #fff;
   font-weight: 100;
   text-align: center; 
@@ -176,10 +154,12 @@ button:active {
 }
 
 .weather__info {
+  padding-top: 5%;
   width: 80%;
-  font-size: 20px;
+  font-size: 1.5em;
   font-weight: 200;
   letter-spacing: 2px;
+  margin-bottom:10%;
 }
 
 
@@ -190,32 +170,150 @@ button:active {
 
 
 
-.weather__error {
- 
+
+.row{
+  margin-right: -15px !important; 
+  margin-left: -15px !important; 
 }
 
 
-@media (min-width: 660px){
+
+.headers{
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.parks{
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+
+
+.park-left{
+      width:100%;
+      float: left;
+      height: 400px;
+      background-color: #fff;
+      text-align: left;
+}
+
+.park-right{
+      float: right;
+      height: 400px;
+      width: 100%;
+      text-align: left;
+
+}
+.park--title{
+  height: 25%;
+  width: 100%;
+  font-size: 2.5em;
+  padding: 2% 7% 0 7%;
+  font-family: 'Roboto Slab', serif;
+}
+
+.park-data{
+  font-size: 1.5em;
+  padding: 2% 0 0 7%; 
+  font-family: inherit;
+}
+
+.park-logo{
+}
+
+.cardImg{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.cardImg{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 10% 7% 0 7%;
+}
+
+
+
+.footer--text{
+  font-size: 1.5em;
+}
+
+
+
+.logo a:hover {
+  background: #3374C2;
+}
+
+
+@media (min-width: 600px){
+
+      .header{
+        font-size: 3em;
+      }
   
     .title-left{
       width:50%;
       float: left;
-      height: 100vh;;
+      height: 100vh;
+      position: relative;
+    }
 
+    button {
+      border: 0;
+      mix-blend-mode: normal;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      padding: 8px 20px;
+      margin: 0 2px;
+      border-radius: 2px;
+      font-weight: lighter;
+      letter-spacing: 1px;
+      font-size: 15px;
+      cursor: pointer;
+      color: #eee;
+      font-weight: 100;
+      text-align: center; 
     }
 
     .form-right{
-      width:50%;
+      width: 50%;
       float: right;
-
       height: 100vh;
+      background-color: #A7A7A7;
+      background-color:#999cd0;
     }
+
+
+
+    
+    .park-left{
+          width:50%;
+          float: left;
+          height: 100vh;
+          background-color: #fff;
+    }
+    
+    .park-right{
+          float: right;
+          height: 300px;
+          width: 50%;
+    }
+
+    .park--title{
+      padding: 10% 7% 25% 7%;
+      font-size: 2em;
+    }
+
+
+  .cardImg{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 10% 0 0 0;
+  }
+
+
 }
 
-
-
-
-.row{
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-}

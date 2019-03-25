@@ -5,6 +5,7 @@ import Forms from './components/Forms';
 import Weather from './components/Weather';
 import Footer from './components/Footer';
 import axios from 'axios';
+import yelplogo from './img/yelp.png'; // with import
 
 const ApiWeatherKey = process.env.REACT_APP_WEATHER_API_KEY ;
 const ApiYelpKey = process.env.REACT_APP_YELP_API_KEY;
@@ -18,7 +19,12 @@ class App extends Component {
     humidity: undefined,
     description: undefined,
     park: undefined,
-    error: undefined
+    adress: undefined,
+    cities: undefined,
+    zip: undefined,
+    link: undefined,
+    error: undefined,
+    check: false
   }
 
   getYata = (place) => {
@@ -37,11 +43,19 @@ class App extends Component {
       .then((res) => {
         console.log(res);
         let values  = [];
+        let images = [];
+        let address = [];
+        let cities = [];
+        let zip = [];
+        let links = [];
 
         for(let i= 0; i< 4; i++ ){
           values.push(res.data.businesses[i].name);
-          values.push(<br></br>);
-
+          images.push(res.data.businesses[i].image_url);
+          address.push(res.data.businesses[i].location.address1);
+          cities.push(res.data.businesses[i].location.city);
+          zip.push(res.data.businesses[i].location.zip_code);
+          links.push(res.data.businesses[i].url);
         }
 
         this.setState({
@@ -49,9 +63,15 @@ class App extends Component {
           city: this.state.city,
           country: this.state.country,
           humidity: this.state.humidity,
-          description: this.state.humidity,
+          description: this.state.description,
           park: values,
-          error: this.state.error
+          adress: address,
+          cities: cities,
+          zip: zip,
+          link: links,
+          img:images,
+          error: this.state.error,
+          check: true
         });
       })
       .catch((err) => {
@@ -66,10 +86,9 @@ class App extends Component {
   getData = async (e) => {
     e.preventDefault();
 
-    const city = e.target.elements.city.value;
+
+    const city = (e.target.elements.city.value).toLowerCase().split(' ').join('+');
     const country = e.target.elements.country.value;
-
-
     
 
 
@@ -86,8 +105,14 @@ class App extends Component {
         country: data.sys.country,
         humidity: data.main.humidity,
         description: data.weather[0].description,
-        park: undefined,
-        error: ""
+        park: 'Loading',
+        adress: 'Loading',
+        cities: 'Loading',
+        zip: 'Loading',
+        link: 'Loading',
+        img:'Loading',
+        error: "",
+        check: false
       });
     }else{
       this.setState({
@@ -97,7 +122,13 @@ class App extends Component {
         humidity: undefined,
         description: undefined,
         park: undefined,
-        error: data.message
+        adress: undefined,
+        cities: undefined,
+        zip: undefined,
+        link: undefined,
+        img:'Loading',
+        error: data.message,
+        check: false
       });
 
     }
@@ -105,37 +136,47 @@ class App extends Component {
   }
 
 
+  render() {    
 
-  render() {
 
+    const sites = [];
+    if(this.state.check){
+      for(let i = 0; i <this.state.park.length; i++){
+        sites.push(
+              <div className="row parks">
+                <div className="col-6 col-md park-left">
+                  <img src={this.state.img[i]} alt="Img" className={"cardImg"}/>
+                </div>
+                <div className="col-6 col-md park-right">
+                  <h4 className="park--title"><b>{this.state.park[i]}</b></h4>
+                  <p className="park-data"><b>Adress:</b> {this.state.adress[i]}</p>
+                  <p className="park-data"><b>City:</b> {this.state.cities[i]}</p>
+                  <p className="park-data"><b>Zip code:</b> {this.state.zip[i]}</p>
+                  <a href={this.state.link[i]}> <img src={yelplogo} alt="gyelp logo" height="50" width="50" className="park-logo"></img> </a>
+                </div>
+             </div>
+             )
 
-    
-    
-  
+      }
+    }
     return (
     <div>
-      <div className="row">
-          <div className="col-6 col-md title-left">
-            <h5>Left</h5>
-            <Titles/>
+          <div className="title-left">
+            <Titles/>  
           </div>
-          <div className="col-6 col-md form-right">
-            <h5>Right</h5>
-                <Forms getData={this.getData}/>
+          <div className="form-right">
+          <Forms getData={this.getData}/>
                 <Weather 
                   temp={this.state.temp}
                   city ={this.state.city}
                   country = {this.state.country}
                   humidity = {this.state.humidity}
                   description = {this.state.description}
-                  park = {this.state.park}
                   error = {this.state.error}     
-                  />
-
-            
+                  />       
           </div>
-          <Footer/>
-      </div>
+      {sites}
+      <Footer/>
     </div>
     );
   }
