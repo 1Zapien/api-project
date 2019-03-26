@@ -9,7 +9,7 @@ import yelplogo from './img/yelp.png'; // with import
 require('dotenv').config()
 
 //const ApiWeatherKey = process.env.REACT_APP_WEATHER_API_KEY;
-const ApiYelpKey = process.env.REACT_APP_YELP_API_KEY;
+//const ApiYelpKey = process.env.REACT_APP_YELP_API_KEY;
 
 //console.log("this is ApiWeatherKey " + ApiWeatherKey );
 
@@ -34,7 +34,7 @@ class App extends Component {
 
       axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${place}`, {
         headers: {
-          Authorization: `Bearer ${ApiYelpKey}`
+          Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
       },
         params: {
         categories: 'active',

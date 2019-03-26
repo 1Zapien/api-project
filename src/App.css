@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:100,200,300,300i,400,400i,700');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+@import url('https://fonts.googleapis.com/css?family=Karla');
 
 html,body {
   font-family: "Open Sans", serif;
@@ -40,11 +41,12 @@ html,body {
   padding-left: 4%;
   padding-top: 3%;
   overflow: hidden;
+  font-family: 'Karla', sans-serif;
 }
 
 .header{
   padding-top: 3%;
-  font-size: 2em;
+  font-size: 3em;
 }
 
 
@@ -119,7 +121,7 @@ input[type="text"] {
   margin-bottom: 30px;
   margin-right: 20px;
   font-size: 20px;
-  padding-top: 10%
+  padding-top: 5%
 }
 
 input[type="text"] { 

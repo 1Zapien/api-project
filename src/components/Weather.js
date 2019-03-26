@@ -33,9 +33,6 @@ const Weather = props =>(
                 props.error ? 
                 <p className="weather__key"> Error: <span className="weather__value">{props.error}</span>
                 </p> : null
-            } {
-                props.temp ? 
-                 <span className="weather__value"><a href="footer">V</a></span>: null
             }
                 
         </div>
