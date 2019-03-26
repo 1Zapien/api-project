@@ -11,6 +11,8 @@ require('dotenv').config()
 const ApiWeatherKey = process.env.WEATHER_API_KEY ;
 const ApiYelpKey = process.env.YELP_API_KEY;
 
+console.log("this is ApiWeatherKey " + ApiWeatherKey );
+
 
 class App extends Component {
   state = {
