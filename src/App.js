@@ -6,6 +6,7 @@ import Weather from './components/Weather';
 import Footer from './components/Footer';
 import axios from 'axios';
 import yelplogo from './img/yelp.png'; // with import
+require('dotenv').config()
 
 const ApiWeatherKey = process.env.REACT_APP_WEATHER_API_KEY ;
 const ApiYelpKey = process.env.REACT_APP_YELP_API_KEY;
