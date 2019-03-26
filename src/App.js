@@ -8,7 +8,7 @@ import axios from 'axios';
 import yelplogo from './img/yelp.png'; // with import
 require('dotenv').config()
 
-const ApiWeatherKey = process.env.REACT_APP_WEATHER_API_KEY;
+//const ApiWeatherKey = process.env.REACT_APP_WEATHER_API_KEY;
 const ApiYelpKey = process.env.REACT_APP_YELP_API_KEY;
 
 console.log("this is ApiWeatherKey " + ApiWeatherKey );
@@ -95,7 +95,7 @@ class App extends Component {
     
 
 
-    const ApiCall = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${ApiWeatherKey}`);
+    const ApiCall = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${process.env.REACT_APP_WEATHER_API_KEY}`);
     const data = await ApiCall.json();
     console.log(data);
 
