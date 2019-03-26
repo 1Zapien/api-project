@@ -8,8 +8,8 @@ import axios from 'axios';
 import yelplogo from './img/yelp.png'; // with import
 require('dotenv').config()
 
-const ApiWeatherKey = WEATHER_API_KEY ;
-const ApiYelpKey = YELP_API_KEY;
+const ApiWeatherKey = process.env.WEATHER_API_KEY ;
+const ApiYelpKey = process.env.YELP_API_KEY;
 
 
 class App extends Component {
