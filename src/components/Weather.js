@@ -31,7 +31,7 @@ const Weather = props =>(
             }</p>
             {
                 props.temp ? 
-                <p className="weather__key"> <b>Scroll down for park and data!</b></p> : null
+                <p className="weather__key"> <b>Scroll down for parks and data!</b></p> : null
             }
             {
                 props.error ? 
