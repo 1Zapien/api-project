@@ -3,6 +3,7 @@ import React, {Component} from'react';
 
 class Forms extends Component{
     render(){
+
         return (
             <form onSubmit={this.props.getData}>
                 <h1 className="header">Get the perfect run!</h1>

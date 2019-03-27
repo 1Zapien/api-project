@@ -3,6 +3,7 @@ import './App.css';
 import Titles from './components/Titles';
 import Forms from './components/Forms';
 import Weather from './components/Weather';
+import Wind from './components/Wind';
 import Footer from './components/Footer';
 import axios from 'axios';
 import yelplogo from './img/yelp.png'; // with import
@@ -25,6 +26,7 @@ class App extends Component {
     adress: undefined,
     cities: undefined,
     zip: undefined,
+    wind: undefined,
     link: undefined,
     error: undefined,
     check: false
@@ -71,6 +73,7 @@ class App extends Component {
           adress: address,
           cities: cities,
           zip: zip,
+          wind: this.state.wind,
           link: links,
           img:images,
           error: this.state.error,
@@ -112,6 +115,7 @@ class App extends Component {
         adress: 'Loading',
         cities: 'Loading',
         zip: 'Loading',
+        wind: data.wind.speed,
         link: 'Loading',
         img:'Loading',
         error: "",
@@ -128,6 +132,7 @@ class App extends Component {
         adress: undefined,
         cities: undefined,
         zip: undefined,
+        wind: undefined,
         link: undefined,
         img:'Loading',
         error: data.message,
@@ -141,27 +146,37 @@ class App extends Component {
 
   render() {    
 
-
     const sites = [];
     if(this.state.check){
       for(let i = 0; i <this.state.park.length; i++){
         sites.push(
+              
               <div className="row parks">
                 <div className="col-6 col-md park-left">
                   <img src={this.state.img[i]} alt="Img" className={"cardImg"}/>
                 </div>
                 <div className="col-6 col-md park-right">
-                  <h4 className="park--title"><b>{this.state.park[i]}</b></h4>
-                  <p className="park-data"><b>Adress:</b> {this.state.adress[i]}</p>
-                  <p className="park-data"><b>City:</b> {this.state.cities[i]}</p>
-                  <p className="park-data"><b>Zip code:</b> {this.state.zip[i]}</p>
-                  <a href={this.state.link[i]}> <img src={yelplogo} alt="gyelp logo" height="50" width="50" className="park-logo"></img> </a>
+                  <p className="park--title">{this.state.park[i]}</p>
+                  <p className="park-data">Adress: {this.state.adress[i]}</p>
+                  <p className="park-data">City: {this.state.cities[i]}</p>
+                  <p className="park-data">Zip code: {this.state.zip[i]}</p>
+                  <a href={this.state.link[i]} className="park-logo" target="_blank">Link to yelp page: <img src={yelplogo} alt="gyelp logo" height="50" width="50" ></img> </a>
                 </div>
              </div>
              )
 
       }
     }
+    let windcal = (wind) => {
+        let cal;
+        if(this.state.wind){
+          cal = Math.round((this.state.wind/10) * 12);
+      }
+      return cal;
+    }
+
+
+
     return (
     <div>
           <div className="title-left">
@@ -178,6 +193,12 @@ class App extends Component {
                   error = {this.state.error}     
                   />       
           </div>
+          <div className="row parks">
+                <Wind
+                  wind = {this.state.wind}
+                  effect = {windcal(this.state.wind)} 
+                  />
+          </div>  
       {sites}
       <Footer/>
     </div>
