@@ -157,7 +157,7 @@ class App extends Component {
                 </div>
                 <div className="col-6 col-md park-right">
                   <p className="park--title">{this.state.park[i]}</p>
-                  <p className="park-data">Adress: {this.state.adress[i]}</p>
+                  <p className="park-data">Address: {this.state.adress[i]}</p>
                   <p className="park-data">City: {this.state.cities[i]}</p>
                   <p className="park-data">Zip code: {this.state.zip[i]}</p>
                   <a href={this.state.link[i]} className="park-logo" target="_blank">Link to yelp page: <img src={yelplogo} alt="gyelp logo" height="50" width="50" ></img> </a>

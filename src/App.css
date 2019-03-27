@@ -23,7 +23,7 @@ html,body {
   background: url("img/main.jpg") center center no-repeat;
   background-size: cover;
   background-color: #fff;
-  height: 50vh;
+  height: 25vh;
 }
 
 .title-container__subtitle {
@@ -45,14 +45,15 @@ html,body {
 }
 
 .header{
-  padding-top: 3%;
-  font-size: 3em;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  font-size: 3.25em;
 }
 
 
 
 .weather__key {
-  color:#eee;
+  color:#fff;
   font-family: inherit;
 }
 
@@ -105,12 +106,6 @@ li a:hover {
 }
 
 
-.title-container {
-  background: #f50000;
- 
-}
-
-
 .form-container {
  height: 100%;
  margin-top: 5%;
@@ -121,7 +116,7 @@ input[type="text"] {
   background-color: transparent;
   border: 0;
   border-bottom: solid 1px #eee;
-  width: 66%;
+  width: 75%;
   padding-bottom: 4px;
   color: #fff !important;
   font-weight: 1.2em;
@@ -151,7 +146,7 @@ button {
   font-weight: lighter;
   letter-spacing: 1px;
   font-size: 20px;
-  width: 66%;
+  width: 75%;
   cursor: pointer;
   background-color: rgb(109, 108, 108);
   color: #fff;
@@ -269,6 +264,11 @@ button:active {
  
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #eee;
+  opacity: 1; /* Firefox */
+}
+
 a{
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
@@ -302,10 +302,11 @@ a{
 
 @media (min-width: 600px){
 
-      .header{
-        font-size: 3em;
-      }
-  
+    .header{
+      padding-top: 20%;
+      padding-bottom: 5%;
+    }
+
     .title-left{
       width:50%;
       float: left;
@@ -314,20 +315,14 @@ a{
     }
 
     button {
-      border: 0;
-      mix-blend-mode: normal;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      padding: 8px 20px;
-      margin: 0 2px;
-      border-radius: 2px;
-      font-weight: lighter;
-      letter-spacing: 1px;
       font-size: 15px;
       cursor: pointer;
       color: #eee;
       font-weight: 100;
       text-align: center; 
     }
+
+
 
     .form-right{
       width: 50%;
@@ -386,6 +381,10 @@ a{
   .row{
     margin-right: 15px !important; 
     margin-left: 15px !important; 
+  }
+
+  input[type="text"] {
+    width: 75%;
   }
   
 }

@@ -18,11 +18,11 @@ const Wind = props =>(
             }
             {
                 props.wind? 
-                <p className="wind__key"> Running against the wind will slow you down: <span className="wind__value">{props.effect} seconds per mile</span></p>: null
+                <p className="wind__key"> Running against the wind will slow you down <span className="wind__value">{props.effect} seconds per mile</span></p>: null
             }
             {
                 props.wind ? 
-                <p className="wind__key"> Running with the Wind will speed you up :  <span className="wind__value">{props.effect/2} seconds per mile</span></p>: null
+                <p className="wind__key"> Running with the Wind will speed you up <span className="wind__value">{props.effect/2} seconds per mile</span></p>: null
             }
             </div>
                 
