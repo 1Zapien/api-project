@@ -160,7 +160,7 @@ class App extends Component {
                   <p className="park-data">Address: {this.state.adress[i]}</p>
                   <p className="park-data">City: {this.state.cities[i]}</p>
                   <p className="park-data">Zip code: {this.state.zip[i]}</p>
-                  <a href={this.state.link[i]} className="park-logo" target="_blank">Link to yelp page: <img src={yelplogo} alt="gyelp logo" height="50" width="50" ></img> </a>
+                  <a href={this.state.link[i]} className="park-logo"  rel="noopener noreferrer" target="_blank"  >Link to yelp page: <img src={yelplogo} alt="gyelp logo" height="50" width="50" ></img> </a>
                 </div>
              </div>
              )
