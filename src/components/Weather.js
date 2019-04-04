@@ -27,7 +27,7 @@ const Weather = props =>(
             }
             {
                 props.temp ? 
-                null: <p className="weather__key"> Description: Narrowing search by state coming soon!</p>
+                null: <p className="weather__key"> Announcement: Narrowing search by state coming soon!</p>
             }
             {
                 props.temp ? 
