@@ -445,9 +445,9 @@ h1.heading {
   margin-top:0px;
   font-weight: 700;
   font-size: 1.65em;
+  color: #6287bd;
 }
 .card-title a {
-  color: #6287bd;
   text-decoration: none !important;
 }
 .card-read-more {

@@ -148,26 +148,21 @@ class App extends Component {
     if(this.state.check){
       for(let i = 0; i <this.state.park.length; i++){
         sites.push(
-              
-
-          <div className="park-info">
-                <div class="card">
-                            <a className="img-card" href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+              <div className="park-info" key={sites.toString()}>
+                <div className="card">
+                          <div className="img-card">
                             <img src={this.state.img[i]} />
-                          </a>
+                          </div>
                             <div className="card-content">
                                 <h4 className="card-title">
-                                    <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"> {this.state.park[i]}
-                                  </a>
+                                    {this.state.park[i]}
                                 </h4>
-                                <p className="">
                                   <p className="park-data">Address: {this.state.adress[i]}</p>
                                   <p className="park-data">City: {this.state.cities[i]}</p>
                                   <p className="park-data">Zip code: {this.state.zip[i]}</p>
-                                </p>
                             </div>
                             <div className="card-read-more">
-                                <a href={this.state.link[i]}class="btn btn-link btn-block">
+                                <a href={this.state.link[i]}className="btn btn-link btn-block">
                                     Link to yelp page: <img src={yelplogo} alt="gyelp logo" height="50" width="50" ></img>
                                 </a>
                             </div>
