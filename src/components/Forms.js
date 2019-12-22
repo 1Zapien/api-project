@@ -6,11 +6,12 @@ class Forms extends Component{
 
         return (
             <form onSubmit={this.props.getData}>
-                <h1 className="header">Get the perfect run!</h1>
-                <input type="text" name="city" placeholder="City"/>
-                <input type="text" name="country" placeholder="Country"/>
+                <h1 className="header">Find the perfect run!</h1>
+                <input className="form-styling"  type="text" name="city" placeholder="City"/>
+                <input className="form-styling" type="text" name="country" placeholder="Country"/>
                 <button> GO!</button>
             </form>
+
         );
     }
 };

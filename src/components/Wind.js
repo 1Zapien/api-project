@@ -3,8 +3,9 @@ import windicon from '../img/wind.png'; // with import
 
 
 
+
 const Wind = props =>(
-        <div className="wind__info" >
+        <div id="winds" className="wind__info" >
             <div className="wind__img" >
             {
                 props.wind ? 

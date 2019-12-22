@@ -1,4 +1,5 @@
 import React from'react';
+import arrow from '../img/arrow-down.png';
 
 
 
@@ -31,7 +32,7 @@ const Weather = props =>(
             }
             {
                 props.temp ? 
-                <p className="weather__key"> <b>Scroll down for parks and data!</b></p> : null
+                <p className="weather__key"> <a className="scroll" href="#winds"><img src={arrow} alt="Img" /></a></p> : null
             }
             {
                 props.error ? 

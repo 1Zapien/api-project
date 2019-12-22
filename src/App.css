@@ -28,15 +28,14 @@ html,body {
 
 .title-container__subtitle {
   width: 100%;
-  color: rgb(255, 255, 255);
+  color: #000;
   margin-left: 2%;
   margin-right: 2%;
   font-size: 1em;
 }
 
 .form-right{
-  color:#DFDFE3;
-  background-color:#999cd0;
+  color:#fff;
   height: 100%;
   padding-left: 13%;
   padding-right: 3%;
@@ -45,16 +44,41 @@ html,body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+
+
+
+
+.scroll {
+  animation: MoveUpDown 1s linear infinite;
+  position: relative;
+  margin-left: 30vw;
+  padding-top: 5px;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: -5px;
+  }
+  50% {
+    bottom: -10px;
+  }
+}
+
+  
+  
+
 .header{  
-  padding: 2% 20% 3% 0;
-  font-size: 3em;
+  padding: 2% 5% 3% 0% !important;
+  font-size: 3rem;
+  color: #6287bd;
 }
 
 
 
 .weather__key {
-  color:rgb(0, 0, 0);
+  color: #000;
   font-family: inherit;
+  font-weight: 400;
 }
 
 .windIcon{
@@ -65,7 +89,7 @@ html,body {
 
 
 .weather__value {
-  color: #DFDFE3;
+  color: #000;
   width: 100%;
  
 }
@@ -76,14 +100,22 @@ span.weather__value{
 
 
 .footer{
-    height: 30px;
+    height: 40px;
     width: 100%;
     background-color: #fff;
     color: #111;
     text-align: left;
     overflow: hidden;
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+    font-weight: bold;
+    padding-left: 5vw;
+    font-style: inherit;
 }
 
+button{
+  background: #257ac7 !important;
+}
 
 
 li {
@@ -106,6 +138,7 @@ li a:hover {
 }
 
 
+
 .form-container {
  height: 100%;
  margin-top: 5%;
@@ -113,15 +146,13 @@ li a:hover {
 }
 
 input[type="text"] {
-  background-color: transparent;
-  border: 0;
-  border-bottom: solid 1px #eee;
+  background-color: #f6f7f9;
   width: 75%;
   padding-bottom: 4px;
-  color: #fff !important;
+  color: #748194 !important;
   font-weight: 1.2em;
   letter-spacing: 2px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   margin-right: 20px;
   font-size: 20px;
   padding-top: 3%
@@ -129,12 +160,28 @@ input[type="text"] {
 
 input[type="text"] { 
     outline: none;
+    color: #748194;;
 }
 
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px rgb(150, 150, 150) inset;
-    -webkit-text-fill-color: #fff !important;
+input:-internal-autofill-selected {
+  background-color: rgba(255, 255, 255, 0) !important;
+  background-image: none !important;
+  color:  #748194 !important;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #748194;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 
 button {
   border: 0;
@@ -146,7 +193,7 @@ button {
   font-weight: lighter;
   letter-spacing: 1px;
   font-size: 1.5em !important;
-  width: 75%;
+  width: 80%;
   cursor: pointer;
   background-color: rgb(109, 108, 108);
   color: #fff;
@@ -159,36 +206,45 @@ button:active {
 
 .weather__info {
   padding-top: 5%;
-  width: 80%;
-  font-size: 1.5em;
+  width: 95%;
+  font-size: 1em;
   font-weight: 200;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   margin-bottom:10%;
   overflow: hidden;
+  color: #fff;
+  line-height: 1.2;
+}
+
+p.weather__info{
+  color: #ccc;
 }
 
 
 .wind__info {
-  width: 100%;
+  width: 80vw;
   font-size: 1.5em;
   font-weight: 200;
   letter-spacing: 2px;
   overflow: hidden;
-  padding-left: 7%;
-  padding-right: 7%;
+  padding-bottom: 15vh;
 }
 
 .wind__img{
-  width: 50%;
+  width:100vw;
   float: left;
-  height: 100%;
-  padding-top: 10%;
-  padding-left: 20%;
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  margin-left: 38vw;
+
 }
 .wind__data{
   width: 100%;
-  float: right;
+  text-align: center;
   padding-top: 5%;
+  padding-top: 12vh;
+  height: 40vh;
+  font-weight: bold;
   
 }
 
@@ -205,6 +261,7 @@ button:active {
   margin-right: 0px !important; 
   margin-left: 0px !important; 
 }
+
 
 
 
@@ -241,6 +298,9 @@ button:active {
       letter-spacing: 2px;
 
 }
+
+
+
 .park--title{
   width: 100%;
   font-size: 2.5em;
@@ -265,7 +325,7 @@ button:active {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #eee;
+  color: #748194;
   opacity: 1; /* Firefox */
 }
 
@@ -299,19 +359,122 @@ a{
   background: #3374C2;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+html,
+body {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  height: 100%;
+  width: 100%; 
+  background: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+ 
+.wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.container-fostrap {
+  display: table-cell;
+  padding: 1em;
+  text-align: center;
+  vertical-align: middle;
+}
+.fostrap-logo {
+  width: 100px;
+  margin-bottom:15px
+}
+h1.heading {
+  color: #fff;
+  font-size: 1.15em;
+  font-weight: 900;
+  margin: 0 0 0.5em;
+  color: #505050;
+}
+@media (min-width: 450px) {
+  h1.heading {
+    font-size: 3.55em;
+  }
+}
+@media (min-width: 760px) {
+  h1.heading {
+    font-size: 3.05em;
+  }
+}
+@media (min-width: 900px) {
+  h1.heading {
+    font-size: 3.25em;
+    margin: 0 0 0.3em;
+  }
+} 
+.card {
+  display: block; 
+    margin-bottom: 20px;
+    line-height: 1.2;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
+    transition: box-shadow .25s; 
+}
+.card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.img-card {
+  width: 100%;
+  height:200px;
+  border-top-left-radius:2px;
+  border-top-right-radius:2px;
+  display:block;
+    overflow: hidden;
+}
+.img-card img{
+  width: 100%;
+  height: 200px;
+  object-fit:cover; 
+  transition: all .25s ease;
+} 
+.card-content {
+  padding:15px;
+  text-align:left;
+}
+.card-title {
+  margin-top:0px;
+  font-weight: 700;
+  font-size: 1.65em;
+}
+.card-title a {
+  color: #6287bd;
+  text-decoration: none !important;
+}
+.card-read-more {
+  border-top: 1px solid #D4D4D4;
+}
+.card-read-more a {
+  text-decoration: none !important;
+  padding:10px;
+  font-weight:600;
+  text-transform: uppercase
+}
+
 
 @media (min-width: 600px){
 
     .header{
-      padding-top: 20%;
       padding-bottom: 5%;
     }
 
     .title-left{
-      width:50%;
-      float: left;
-      height: 100vh;
+      width:96vw;
+      /*float: left;*/
+      height: 95vh;
+      margin-left: 2vw;
+      margin-top: 2vh;
       position: relative;
+      
     }
 
     button {
@@ -325,14 +488,25 @@ a{
 
 
     .form-right{
+      /*
       width: 50%;
       float: right;
       padding-left: 3%;
-      height: 100vh;
+      height: 95vh;
       background-color: #A7A7A7;
-      background-color:#999cd0;
+      background-color:#999cd0;*/
+      width: 30vw;
+      float: right;
+      padding-left: 4%;
+      height: 70vh;
+      background-color: rgba(256,256,256,1);;
+      margin-top: -80vh;
+      margin-right: 10vw;
+      z-index: 1;
+      position: relative;
+      border-radius: 24px;
+      box-shadow:0 0 10px grey;
     }
-
 
 
     
@@ -347,7 +521,17 @@ a{
           float: right;
           height: 300px;
           width: 50%;
+          float: left;
     }
+
+    .park-info{
+      width:50vw;
+      height:75vh;
+      padding-left: 2.5vw;
+      padding-right: 2.5vw;
+      float: left;
+    }
+
 
     .park--title{
       padding: 10% 7% 25% 7%;
@@ -362,32 +546,33 @@ a{
     padding: 10% 0 0 0;
   }
 
-
-
-  .wind__info {
-    padding-left: 0%;
-  }
-
-
-  .wind__data{
-    width: 50%;
-    float: right;
-    padding-left: 7%;
-  }
-
-  wind__img{
-    width: 50%;
-    float: left;
-  }
-
-  .row{
-    margin-right: 15px !important; 
-    margin-left: 15px !important; 
-  }
-
   input[type="text"] {
-    width: 75%;
+    width: 95%;
+  }
+
+  button{
+    width: 95%;
+
+  }
+
+
+  .scroll{
+    margin-left: 8vw;
   }
   
 }
 
+
+.form-styling {
+  width: 100%;
+  height: 35px;
+	padding-left: 15px;
+	border: none;
+	border-radius: 10px;
+  margin-bottom: 10px;
+  background: rgba(255,255,255,.2);
+}
+
+.form-signin input, .form-signup input {
+  font-size: 13px;
+}

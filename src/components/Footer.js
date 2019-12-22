@@ -7,9 +7,9 @@ const Footer = () =>(
 
     <div className="footer">
             <ul>
-                <li><p className="footer--text">Made With: </p></li>
-                <li><a href="https://www.yelp.com"><img src={yelplogo} alt="yelp logo" className="logo" height="30" width="30"></img></a></li>
+                <li><p className="footer--text">Made With:</p></li>
                 <li><a href="https://openweathermap.org/"> <img src={weatherlogo} alt="weather api logo" className="logo" height="30" width="30"></img></a></li>
+                <li><a href="https://www.yelp.com"><img src={yelplogo} alt="yelp logo" className="logo" height="30" width="30"></img></a></li>
             </ul>
     </div>
 

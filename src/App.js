@@ -46,7 +46,6 @@ class App extends Component {
       }
       })
       .then((res) => {
-        console.log(res);
         let values  = [];
         let images = [];
         let address = [];
@@ -100,7 +99,6 @@ class App extends Component {
 
     const ApiCall = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${process.env.REACT_APP_WEATHER_API_KEY}`);
     const data = await ApiCall.json();
-    console.log(data);
 
     
     if(city && country && data.cod !== '404'){
@@ -151,18 +149,31 @@ class App extends Component {
       for(let i = 0; i <this.state.park.length; i++){
         sites.push(
               
-              <div className="row parks">
-                <div className="col-6 col-md park-left">
-                  <img src={this.state.img[i]} alt="Img" className={"cardImg"}/>
+
+          <div className="park-info">
+                <div class="card">
+                            <a className="img-card" href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                            <img src={this.state.img[i]} />
+                          </a>
+                            <div className="card-content">
+                                <h4 className="card-title">
+                                    <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"> {this.state.park[i]}
+                                  </a>
+                                </h4>
+                                <p className="">
+                                  <p className="park-data">Address: {this.state.adress[i]}</p>
+                                  <p className="park-data">City: {this.state.cities[i]}</p>
+                                  <p className="park-data">Zip code: {this.state.zip[i]}</p>
+                                </p>
+                            </div>
+                            <div className="card-read-more">
+                                <a href={this.state.link[i]}class="btn btn-link btn-block">
+                                    Link to yelp page: <img src={yelplogo} alt="gyelp logo" height="50" width="50" ></img>
+                                </a>
+                            </div>
+                  </div>
                 </div>
-                <div className="col-6 col-md park-right">
-                  <p className="park--title">{this.state.park[i]}</p>
-                  <p className="park-data">Address: {this.state.adress[i]}</p>
-                  <p className="park-data">City: {this.state.cities[i]}</p>
-                  <p className="park-data">Zip code: {this.state.zip[i]}</p>
-                  <a href={this.state.link[i]} className="park-logo"  rel="noopener noreferrer" target="_blank"  >Link to yelp page: <img src={yelplogo} alt="gyelp logo" height="50" width="50" ></img> </a>
-                </div>
-             </div>
+
              )
 
       }
@@ -175,30 +186,36 @@ class App extends Component {
       return cal;
     }
 
+    let windbool = [];
 
+    if(sites[0]){
+      windbool= <div id="park" className="row parks">
+      <Wind
+        wind = {this.state.wind}
+        effect = {windcal(this.state.wind)} 
+        />
+      </div>  
+    }
 
     return (
     <div>
           <div className="title-left">
-            <Titles/>  
+            <Titles/> 
           </div>
           <div className="form-right">
-          <Forms getData={this.getData}/>
-                <Weather 
-                  temp={this.state.temp}
-                  city ={this.state.city}
-                  country = {this.state.country}
-                  humidity = {this.state.humidity}
-                  description = {this.state.description}
-                  error = {this.state.error}     
-                  />       
-          </div>
-          <div className="row parks">
-                <Wind
-                  wind = {this.state.wind}
-                  effect = {windcal(this.state.wind)} 
-                  />
-          </div>  
+              <Forms getData={this.getData}/>
+                  <Weather 
+                    temp={this.state.temp}
+                    city ={this.state.city}
+                    country = {this.state.country}
+                    humidity = {this.state.humidity}
+                    description = {this.state.description}
+                    error = {this.state.error}     
+                    />       
+            </div> 
+      
+
+      {windbool} 
       {sites}
       <Footer/>
     </div>
