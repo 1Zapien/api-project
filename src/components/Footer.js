@@ -3,6 +3,8 @@ import yelplogo from '../img/yelp.png'; // with import
 import weatherlogo from '../img/weather.png'; // with import
 
 
+
+/*footer says what tools app was made with*/
 const Footer = () =>(
 
     <div className="footer">

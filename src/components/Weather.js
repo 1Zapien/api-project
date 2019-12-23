@@ -3,7 +3,6 @@ import arrow from '../img/arrow-down.png';
 
 
 
-
 const Weather = props =>(
         <div className="weather__info" >
              {
@@ -28,11 +27,11 @@ const Weather = props =>(
             }
             {
                 props.temp ? 
-                null: <p className="weather__key"> Announcement: Narrowing search by state coming soon!</p>
+                null: <p className="weather__key"> Announcement: Weather API currently only works with countries. e.g. US</p>
             }
             {
                 props.temp ? 
-                <p className="weather__key"> <a className="scroll" href="#winds"><img src={arrow} alt="Img" /></a></p> : null
+                <p className="weather__key"> <a className="scroll" href="#winds"><img src={arrow} alt="arrow icon" /></a></p> : null
             }
             {
                 props.error ? 

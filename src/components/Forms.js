@@ -1,6 +1,6 @@
 import React, {Component} from'react';
 
-
+/*form that takes input in location in order to get info from the apis*/
 class Forms extends Component{
     render(){
 

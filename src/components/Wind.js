@@ -9,7 +9,7 @@ const Wind = props =>(
             <div className="wind__img" >
             {
                 props.wind ? 
-                <img src={windicon} alt="Img" className="windIcon" height="50" width="50"/> : null
+                <img src={windicon} alt="wind icon" className="windIcon" height="50" width="50"/> : null
             }
             </div>
             <div className="wind__data" >

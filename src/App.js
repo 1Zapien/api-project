@@ -12,7 +12,6 @@ require('dotenv').config()
 //const ApiWeatherKey = process.env.REACT_APP_WEATHER_API_KEY;
 //const ApiYelpKey = process.env.REACT_APP_YELP_API_KEY;
 
-//console.log("this is ApiWeatherKey " + ApiWeatherKey );
 
 
 class App extends Component {
@@ -151,7 +150,7 @@ class App extends Component {
               <div className="park-info" key={sites.toString()}>
                 <div className="card">
                           <div className="img-card">
-                            <img src={this.state.img[i]} />
+                            <img src={this.state.img[i]} alt="img of named park"/>
                           </div>
                             <div className="card-content">
                                 <h4 className="card-title">
